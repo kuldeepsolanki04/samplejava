@@ -20,8 +20,8 @@ spec:
         image: docker.io/kusolank812/helloworld-app:1.0-amd64 
         resources:
           limits:
-            cpu: 10m
-            memory: 20Mi
+            cpu: 20m
+            memory: 40Mi
           requests:
             cpu: 10m
             memory: 20Mi 
