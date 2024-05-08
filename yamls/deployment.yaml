@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: helloworld-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld-app
+  template:
+    metadata:
+      labels:
+        app: helloworld-app
+        clusterAgent_cr: AutoInstrumentationAgentName
+        name: clusterAgent
+    spec:
+      containers:
+      - name: helloworld-app-1
+        image: docker.io/kusolank812/helloworld-app:1.0-amd64 
+        resources:
+          limits:
+            cpu: 10m
+            memory: 20Mi
+          requests:
+            cpu: 10m
+            memory: 20Mi 
+        ports:
+        - containerPort: 9982 # Adjust the port as per your application's configuration
+        volumeMounts:
+          - name: secret-volume
+            mountPath: /opt/appdynamics/auto-instrumentation-agent/secret-volume
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: appd-secret
+   #   - name: helloworld-app2
+    #    image: docker.io/kusolank812/helloworld-app:4.0
+     #   ports:
+      #  - containerPort: 8081 # Adjust the port as per your application's configuration
+  
+
