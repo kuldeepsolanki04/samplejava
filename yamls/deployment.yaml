@@ -26,6 +26,6 @@ spec:
             memory: 20Mi 
         ports:
         - containerPort: 9982 # Adjust the port as per your application's configuration
-rt as per your application's configuration
+
   
 
