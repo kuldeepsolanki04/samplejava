@@ -16,13 +16,13 @@ spec:
       containers:
       - name: helloworld-app-1
         image: docker.io/kusolank812/helloworld-app:1.0-amd64 
-        resources:
-          limits:
-            cpu: 300m
-            memory: 500Mi
-          requests:
-            cpu: 100m
-            memory: 100Mi 
+        # resources:
+        #   limits:
+        #     cpu: 300m
+        #     memory: 500Mi
+        #   requests:
+        #     cpu: 100m
+        #     memory: 100Mi 
         ports:
         - containerPort: 9982 # Adjust the port as per your application's configuration
 
