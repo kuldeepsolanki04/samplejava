@@ -12,8 +12,6 @@ spec:
     metadata:
       labels:
         app: helloworld-app
-        clusterAgent_cr: AutoInstrumentationAgentName
-        name: clusterAgent
     spec:
       containers:
       - name: helloworld-app-1
