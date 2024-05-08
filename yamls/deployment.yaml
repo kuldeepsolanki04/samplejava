@@ -26,16 +26,6 @@ spec:
             memory: 20Mi 
         ports:
         - containerPort: 9982 # Adjust the port as per your application's configuration
-        volumeMounts:
-          - name: secret-volume
-            mountPath: /opt/appdynamics/auto-instrumentation-agent/secret-volume
-      volumes:
-        - name: secret-volume
-          secret:
-            secretName: appd-secret
-   #   - name: helloworld-app2
-    #    image: docker.io/kusolank812/helloworld-app:4.0
-     #   ports:
-      #  - containerPort: 8081 # Adjust the port as per your application's configuration
+rt as per your application's configuration
   
 
